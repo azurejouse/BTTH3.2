@@ -1,11 +1,11 @@
-#include "cARRAY_H.h"   
+#include "cARRAY_H.h"
 int main(){
     cArray arr;
     int x;
     arr.Nhap();
     cout << "\nMang vua nhap: ";
     arr.Xuat();
-    cout << "\nNhap gia tri x can dem: ";
+    cout << "Nhap gia tri x can dem: ";
     cin >> x;
     cout << "So lan xuat hien cua " << x << " trong mang: " << arr.DemX(x) << endl;
     if (arr.KiemTraTangDan()) {
@@ -25,8 +25,18 @@ int main(){
     } else {
         cout << "So nguyen to lon nhat la: " << sntMax << endl;
     }
-    arr.SapXepTang();
-    cout << "Mang sau khi sap xep: ";
-    arr.Xuat();
+    int n = arr.getSize();
+    cout << "Sap xep theo kieu Insertion Sort: ";
+    arr.InsertionSort(); arr.Xuat(); arr.Reset();
+    cout << "Sap xep theo kieu Merge Sort:     ";
+    arr.MergeSort(0, n - 1); arr.Xuat(); arr.Reset();
+    cout << "Sap xep theo kieu Quick Sort:     ";
+    arr.QuickSort(0, n - 1); arr.Xuat(); arr.Reset();
+    cout << "Sap xep theo kieu Heap Sort:      ";
+    arr.HeapSort(); arr.Xuat(); arr.Reset();
+    cout << "Sap xep theo kieu Counting Sort:  ";
+    arr.CountingSort(); arr.Xuat(); arr.Reset();
+    cout << "Sap xep theo kieu Radix Sort:     ";
+    arr.RadixSort(); arr.Xuat();
     return 0;
 }
