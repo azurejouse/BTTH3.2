@@ -1,6 +1,5 @@
 #ifndef CARRAY_H
 #define CARRAY_H
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
